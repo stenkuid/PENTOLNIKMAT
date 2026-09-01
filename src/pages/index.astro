@@ -1,0 +1,49 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const items = [{"name": "Semangkuk Bakso Urat Spesial", "price": "Rp 18.000", "desc": "Bakso urat tebal bertekstur mantap dipadu kuah kaldu sapi hangat gurih.", "img": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=500&q=80", "badge": "BEST SELLER"}, {"name": "Bakso Daging Smooth & Halus", "price": "Rp 16.000", "desc": "Bakso daging sapi asli yang lembut di mulut dengan pangsit renyah.", "img": "https://images.unsplash.com/photo-1541832676-9b763b0239ab?w=500&q=80", "badge": "FAVORITE"}, {"name": "Mie Ayam Bakso Komplit", "price": "Rp 20.000", "desc": "Mie kenyal dengan topping ayam bumbu manis gurih plus 2 bakso sapi.", "img": "https://images.unsplash.com/photo-1612927601601-6638404737ce?w=500&q=80", "badge": "KOMPLIT"}];
+---
+
+<Layout title="Pentol Nikmat — Bakso Urat, Daging & Mie Ayam">
+  <section class="container hero">
+    <div>
+      <h1 class="hero-title">Semangkuk Nikmat, Bikin Balik Lagi.</h1>
+      <p class="hero-desc">Bakso urat gurih, bakso daging lembut, mie kuning, bihun segar, dan mie ayam lezat untuk menemani rasa lapar kapan saja.</p>
+      <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+        <a href="#menu" class="btn">Lihat Katalog</a>
+        <a href="#lokasi" class="btn btn-secondary">Informasi Lokasi</a>
+      </div>
+    </div>
+    <div>
+      <img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=1200&q=80" alt="PENTOLNIKMAT Showcase" class="hero-img" />
+    </div>
+  </section>
+
+  <section id="menu" class="section container">
+    <h2 class="section-title">Produk & Layanan Unggulan</h2>
+    <div class="cards-grid">
+      {items.map((item) => (
+        <div class="card">
+          <img src={item.img} alt={item.name} class="card-img" />
+          <div class="card-body">
+            <span class="badge">{item.badge}</span>
+            <h3 class="card-title">{item.name}</h3>
+            <p class="card-desc">{item.desc}</p>
+            <div class="card-footer">
+              <span class="card-price">{item.price}</span>
+              <a href="https://wa.me/?text=Halo%20PENTOLNIKMAT,%20saya%20tertarik%20dengan%20" class="btn" style="padding:0.4rem 1rem; font-size:0.85rem;" target="_blank">Pesan</a>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section id="lokasi" class="container">
+    <div class="info-box">
+      <h2 class="info-title">Siap Menikmati Layanan PENTOLNIKMAT?</h2>
+      <p style="font-size:1.2rem; margin-bottom:2rem; opacity:0.9;">Kunjungi cabang kami atau tanyakan via WhatsApp resmi.</p>
+      <a href="https://wa.me/?text=Halo%20PENTOLNIKMAT" class="btn" style="background:#fff; color:var(--accent); font-size:1.1rem; padding:0.9rem 2.2rem;" target="_blank">Hubungi Kami Sekarang</a>
+    </div>
+  </section>
+</Layout>
