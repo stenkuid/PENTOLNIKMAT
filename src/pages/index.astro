@@ -1,103 +1,72 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-const items = [{"name": "Bakso Urat Spesial", "price": "Rp 18.000", "desc": "Bakso urat tebal bertekstur renyah dipadu kuah kaldu sapi hangat gurih beraroma.", "img": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=500&q=80", "badge": "BEST SELLER"}, {"name": "Bakso Daging Smooth", "price": "Rp 16.000", "desc": "Bakso daging sapi asli yang lembut di mulut dengan pangsit goreng garing.", "img": "https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=500&q=80", "badge": "FAVORITE"}, {"name": "Mie Ayam Bakso Komplit", "price": "Rp 20.000", "desc": "Mie kenyal dengan topping ayam bumbu manis gurih plus 2 pentol bakso sapi.", "img": "https://images.unsplash.com/photo-1612927601601-6638404737ce?w=500&q=80", "badge": "KOMPLIT"}, {"name": "Bakso Mercon Pedas", "price": "Rp 22.000", "desc": "Bakso jumbo berisian cabai rawit melimpah yang siap memberikan sensasi pedas mantap.", "img": "https://images.unsplash.com/photo-1555126634-323283e090fa?w=500&q=80", "badge": "HOT SPICY"}];
-const features = [{"icon": "\ud83e\udd69", "title": "100% Daging Sapi Asli", "desc": "Diolah setiap pagi menggunakan daging sapi segar tanpa campuran bahan pengawet."}, {"icon": "\ud83c\udf72", "title": "Kuah Kaldu Murni", "desc": "Dimasak berjam-jam menghasilkan kuah gurih alami dengan aroma rempah istimewa."}, {"icon": "\ud83c\udf36\ufe0f", "title": "Sambal Ulek Segar", "desc": "Sambal buatan sendiri dari cabai pilihan dengan tingkat kepedasan gurih menggelegar."}];
-const stats = [{"num": "4.9 \u2605", "label": "Rating Kenikmatan"}, {"num": "100%", "label": "Daging Sapi Asli"}, {"num": "Fresh", "label": "Kaldu Tulang Sapi"}];
+const stats = [{'val': '100%', 'lbl': 'Daging Sapi Halal'}, {'val': '5 Level', 'lbl': 'Pedas Mercon'}, {'val': '0%', 'lbl': 'Bahan Pengawet'}, {'val': '1.000+', 'lbl': 'Mangkok Terjual / Hari'}];
+const items = [{'name': 'Bakso Urat Super Jumbo', 'desc': '1 Bakso urat besar tekstur krekes garing + 4 bakso halus + mie bihun kuah gurih.', 'price': 'Rp 22.000', 'tag': 'Best Seller'}, {'name': 'Bakso Mercon Meledak', 'desc': 'Bakso isi cabai rawit melimpah yang meledak pedasnya saat digigit.', 'price': 'Rp 25.000', 'tag': 'Super Spicy'}, {'name': 'Bakso Telur Utuh Kuah Kaldu', 'desc': 'Bakso daging sapi besar berisi 1 butir telur ayam utuh berkualitas.', 'price': 'Rp 20.000', 'tag': 'Favorite'}, {'name': 'Mie Ayam Bakso Komplit', 'desc': 'Mie kenyal topping ayam bumbu rempah melimpah + 2 pentol bakso daging.', 'price': 'Rp 18.000', 'tag': 'Kenyang'}];
+const features = [{'icon': '🥩', 'title': 'Daging Sapi Segar Setiap Hari', 'desc': 'Diolah dari daging sapi segar tanpa campuran bahan kimia.'}, {'icon': '🍲', 'title': 'Kuah Kaldu Sumsum Asli', 'desc': 'Rebusan tulang sumsum sapi lebih dari 8 jam untuk rasa gurih alami.'}, {'icon': '🌶️', 'title': 'Sambal Cabai Rawit Asli', 'desc': 'Sambal racikan sendiri tanpa pewarna atau perisa sintetis.'}];
 ---
 
-<Layout title="Pentol Nikmat — Bakso Urat, Daging & Mie Ayam">
-  <!-- Hero Section -->
-  <section class="hero-section">
-    <div class="hero-overlay"></div>
-    <div class="container hero-content">
+<Layout title="Pentol Nikmat — Kuliner Bakso Sapi Asli">
+  <section class="hero">
+    <div class="container">
       <div class="hero-badge">
-        <span>🥣 Kuliner Bakso Daging Sapi Asli & Gurih</span>
+        🥣 100% Daging Sapi Pilihan Tanpa Pengawet
       </div>
-      <h1 class="hero-title">
-        Semangkuk Nikmat, Bikin Balik Lagi.<br />
-        <span class="text-gradient-accent">Kualitas Impeccable Terbaik.</span>
-      </h1>
-      <p class="hero-desc">
-        Bakso urat bertekstur mantap, bakso daging halus yang lembut, kuah kaldu sapi hangat nan gurih, serta mie ayam lezat yang siap memanjakan lidah.
-      </p>
-
-      <div class="hero-buttons">
-        <a href="#katalog" class="btn">
-          <span>Jelajahi Katalog</span>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      <h1 class="hero-title">PEDES NAMPOL, BAKSO SAPI DAGING ASLI</h1>
+      <p class="hero-desc">Pentol urat krekes, bakso mercon pedas meledak, dan kuah kaldu sapi kaya rempah yang bikin nagih dari suapan pertama.</p>
+      
+      <div style="display: flex; gap: 1rem; justify-content: center; align-items: center;">
+        <a href="https://wa.me/6281234567890" class="btn-cta">
+          Pesan Sekarang via WhatsApp
         </a>
-        <a href="https://wa.me/?text=Halo%20PENTOLNIKMAT,%20saya%20mau%20konsultasi%20order" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          <span>Pesan via WhatsApp</span>
+        <a href="#katalog" style="padding: 0.75rem 1.5rem; border-radius: 99px; border: 1px solid var(--card-border); color: var(--text-main); font-weight: 600;">
+          Lihat Katalog
         </a>
       </div>
 
-      <div class="hero-stats">
-        {stats.map((s) => (
-          <div class="stat-item">
-            <h3>{s.num}</h3>
-            <p>{s.label}</p>
+      <div class="stats-grid">
+        {stats.map((stat) => (
+          <div class="stat-card">
+            <div class="stat-val">{stat.val}</div>
+            <div class="stat-lbl">{stat.lbl}</div>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- Keunggulan Section -->
-  <section id="keunggulan" class="section container">
-    <div class="section-header">
-      <p class="section-subtitle">MENGAPA MEMILIH KAMI</p>
-      <h2 class="section-title">Keunggulan Utama PENTOLNIKMAT</h2>
-    </div>
-    <div class="features-grid">
-      {features.map((f) => (
-        <div class="feature-card">
-          <div class="feature-icon">{f.icon}</div>
-          <h3 class="feature-title">{f.title}</h3>
-          <p class="feature-desc">{f.desc}</p>
-        </div>
-      ))}
-    </div>
-  </section>
-
-  <!-- Katalog Section -->
-  <section id="katalog" class="section container">
-    <div class="section-header">
-      <p class="section-subtitle">PILIHAN TERBAIK</p>
-      <h2 class="section-title">Katalog Produk & Layanan Unggulan</h2>
-    </div>
-    <div class="cards-grid">
-      {items.map((item) => (
-        <div class="card">
-          <div class="card-img-wrap">
-            <img src={item.img} alt={item.name} class="card-img" />
-            <span class="badge">{item.badge}</span>
-          </div>
-          <div class="card-body">
-            <h3 class="card-title">{item.name}</h3>
-            <p class="card-desc">{item.desc}</p>
-            <div class="card-footer">
-              <span class="card-price">{item.price}</span>
-              <a href={`https://wa.me/?text=Halo%20PENTOLNIKMAT,%20saya%20tertarik%20order%20${encodeURIComponent(item.name)}`} class="btn btn-card" target="_blank" rel="noopener noreferrer">
-                <span>Pesan</span>
-              </a>
+  <section id="katalog" class="catalog-section">
+    <div class="container">
+      <h2 class="section-title">PILAHAN PRODUK & LAYANAN UNGGULAN</h2>
+      <div class="item-grid">
+        {items.map((item) => (
+          <div class="item-card">
+            <div>
+              <span class="item-tag">{item.tag}</span>
+              <h3 class="item-name">{item.name}</h3>
+              <p class="item-desc">{item.desc}</p>
+            </div>
+            <div class="item-footer">
+              <span class="item-price">{item.price}</span>
+              <a href="https://wa.me/6281234567890" style="color: var(--accent); font-weight: 700; font-size: 0.9rem;">Pesan &rarr;</a>
             </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   </section>
 
-  <!-- CTA Box Section -->
-  <section id="lokasi" class="container">
-    <div class="cta-box">
-      <div class="cta-content">
-        <h2 class="cta-title">Siap Menikmati Layanan Terbaik dari PENTOLNIKMAT?</h2>
-        <p class="cta-desc">Hubungi tim kami via WhatsApp resmi untuk konsultasi gratis, tanya jawab produk, atau pemesanan cepat hari ini.</p>
-        <a href="https://wa.me/?text=Halo%20PENTOLNIKMAT" class="btn" style="padding: 1rem 2.5rem; font-size: 1.1rem;" target="_blank" rel="noopener noreferrer">
-          <span>Hubungi Kami Sekarang</span>
-        </a>
+  <section id="keunggulan" class="features-section">
+    <div class="container">
+      <h2 class="section-title">KENAPA PENTOL NIKMAT BEDA?</h2>
+      <div class="features-grid">
+        {features.map((feat) => (
+          <div class="feature-card">
+            <div class="feature-icon">{feat.icon}</div>
+            <h3 class="feature-title">{feat.title}</h3>
+            <p class="feature-desc">{feat.desc}</p>
+          </div>
+        ))}
       </div>
     </div>
   </section>
